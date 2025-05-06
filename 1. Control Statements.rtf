@@ -1,0 +1,235 @@
+{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Emoji;}{\f2\fnil Calibri;}}
+{\colortbl ;\red255\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs28\lang9\tab\b\tab\tab Control Statements\par
+\b0 Java compiler executes the code from top to bottom. The statements in the code are executed according to the order in which they appear. However, Java provides statements that can be used to control the flow of Java code. Such statements are called control flow statements.\par
+They control how your program runs, based on conditions or loops.\par
+Java provides three types of control flow statements.:\par
+\par
+\b Conditional/Decision Making statements\b0\par
+
+\pard\li720\sa200\sl276\slmult1 if statements\par
+switch statement\par
+
+\pard\sa200\sl276\slmult1\b Loop statements\b0\par
+
+\pard\li720\sa200\sl276\slmult1 do while loop\par
+while loop\par
+for loop\par
+for-each loop\par
+
+\pard\sa200\sl276\slmult1\b Jump statements\b0\par
+
+\pard\li720\sa200\sl276\slmult1 break statement\par
+continue statement\par
+
+\pard\sa200\sl276\slmult1\b Decision-Making statements:\b0\par
+As the name suggests, decision-making statements decide which statement to execute and when. Decision-making statements evaluate the Boolean expression and control the program flow depending upon the result of the condition provided. There are two types of decision-making statements in Java, i.e.,\par
+
+\pard\li720\sa200\sl276\slmult1  1. If statement\par
+ 2. switch statement.\par
+
+\pard\sa200\sl276\slmult1\cf1\b 1) If Statement:\cf0\b0\par
+\tab In Java, the "if" statement is used to evaluate a condition. \par
+The condition of the If statement gives a Boolean value, either true or false. In Java, there are four types of if-statements\par
+
+\pard\li720\sa200\sl276\slmult1 i. Simple if statement\par
+ii. if-else statement\par
+iii. if-else-if ladder\par
+iv. Nested if-statement\par
+
+\pard\sa200\sl276\slmult1\cf1 i)  Simple if statement:\cf0\par
+It evaluates a Boolean expression and enables the program to enter a block of code if the expression evaluates to true.\par
+\b Example 1:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 public class Main \{\par
+    public static void main(String[] args) \{\par
+        int number = 10;\par
+        // Simple if statement\par
+        if (number >100) \{\par
+            System.out.println("The number is positive.");\par
+        \}\par
+        System.out.println("This line always prints.");\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Example 2:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter your age: ");\par
+        int age = scanner.nextInt();\par
+         if (age >= 18) \{\par
+            System.out.println("You are eligible to vote!");\par
+        \}\par
+        System.out.println("Thank you for checking.");\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\b 2) if-else statement:\cf0\b0\par
+The if-else statement is an extension to the if-statement, which uses another block of code, i.e., else block. The else block is executed if the condition of the if-block is evaluated as false.\par
+\b Example 1:\cf1\b0\par
+
+\pard\li720\sa200\sl276\slmult1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter a number: ");\par
+        int number = scanner.nextInt();\par
+        // if-else statement\par
+        if (number % 2 == 0) \{\par
+            System.out.println("The number is even.");\par
+        \} else \{\par
+            System.out.println("The number is odd.");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Example 2:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter your age: ");\par
+        int age = scanner.nextInt();\par
+        // if-else statement\par
+        if (age >= 18) \{\par
+            System.out.println("You are eligible for a driving license.");\par
+        \} else \{\par
+            System.out.println("Sorry, you are not eligible yet.");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\b 3) if-else-if ladder:\cf0\b0\par
+The if-else-if statement contains the if-statement followed by multiple else-if statements. \par
+\b Example 1:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter your marks (0-100): ");\par
+        int marks = scanner.nextInt();\par
+        // if-else-if ladder\par
+        if (marks >= 90) \{\par
+            System.out.println("Grade: A+");\par
+        \} else if (marks >= 80) \{\par
+            System.out.println("Grade: A");\par
+        \} else if (marks >= 70) \{\par
+            System.out.println("Grade: B");\par
+        \} else if (marks >= 60) \{\par
+            System.out.println("Grade: C");\par
+        \} else if (marks >= 50) \{\par
+            System.out.println("Grade: D");\par
+        \} else \{\par
+            System.out.println("Grade: F (Fail)");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Example 2:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter the temperature (\'b0C): ");\par
+        int temp = scanner.nextInt();\par
+        // if-else-if ladder to check temperature range\par
+        if (temp >= 40) \{\par
+            System.out.println("It's extremely hot outside! \f1\u-10178?\u-8843?\f0 ");\par
+        \} else if (temp >= 30) \{\par
+            System.out.println("It's hot today.");\par
+        \} else if (temp >= 20) \{\par
+            System.out.println("The weather is warm.");\par
+        \} else if (temp >= 10) \{\par
+            System.out.println("It's a bit chilly.");\par
+        \} else \{\par
+            System.out.println("It's cold outside! \f1\u10052?\u-497?\f0 ");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0 4. Nested if-statement:\par
+ A nested if statement means you have an if statement inside another if. It's used when you want to check multiple related conditions.\par
+\b Example 1:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 import java.util.Scanner;\par
+public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter your age: ");\par
+        int age = scanner.nextInt();\par
+        System.out.print("Do you have a degree? (yes/no): ");\par
+        String degree = scanner.next();\par
+        // Nested if statement\par
+        if (age >= 21) \{\par
+            if (degree.equalsIgnoreCase("yes")) \{\par
+                System.out.println("You are eligible to apply for the job.");\par
+            \} else \{\par
+                System.out.println("You need a degree to apply.");\par
+            \}\par
+        \} else \{\par
+            System.out.println("You must be at least 21 years old to apply.");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Example 2:\b0\par
+\tab\cf1 import java.util.Scanner;\par
+
+\pard\li720\sa200\sl276\slmult1 public class Main \{\par
+    public static void main(String[] args) \{\par
+        Scanner scanner = new Scanner(System.in);\par
+        System.out.print("Enter marks in Math: ");\par
+        int math = scanner.nextInt();\par
+        System.out.print("Enter marks in Science: ");\par
+        int science = scanner.nextInt();\par
+        System.out.print("Enter marks in English: ");\par
+        int english = scanner.nextInt();\par
+        // Outer if: overall percentage check\par
+        if ((math + science + english) / 3 >= 40) \{\par
+            // Nested if: individual subject pass check\par
+            if (math >= 35 && science >= 35 && english >= 35) \{\par
+                System.out.println("You passed the exam!");\par
+            \} else \{\par
+                System.out.println("You failed in one or more subjects.");\par
+            \}\par
+        \} else \{\par
+            System.out.println("You failed due to low overall percentage.");\par
+        \}\par
+    \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0 ---------------------------------------------------------------------------------------------\par
+\b Loop statements:\b0\par
+A loop lets you repeat a block of code multiple times, automatically.\par
+Instead of writing the same line of code over and over, you use a loop to do it for you.\par
+There are 3 main types of loops in Java:\par
+
+\pard\li720\sa200\sl276\slmult1 1. for loop\par
+2. while loop\par
+3. do while loop\par
+
+\pard\sa200\sl276\slmult1\cf1\b 1. for loop \f2\endash  \cf0\b0\par
+when you know how many times to repeat\par
+\b\f0\lang16393 Example 1:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 for (int i = 1; i <= 5; i++) \{\par
+    System.out.println("Hello " + i);\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Example 2:\b0\par
+
+\pard\li720\sa200\sl276\slmult1 1. Write a java program that prints 1 to 100\par
+2. Write a Java program using a for loop to print all even numbers     from 1 to 50.\par
+3. Write a Java program using a for loop to print numbers from 100 down to 1 in reverse order.\par
+
+\pard\sa200\sl276\slmult1\lang9\par
+\tab\par
+}
+ 
