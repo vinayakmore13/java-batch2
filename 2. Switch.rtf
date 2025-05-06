@@ -1,0 +1,214 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}}
+{\colortbl ;\red255\green0\blue0;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs28\lang9 Switch Statement:\b0\par
+
+\pard\li720\sa200\sl276\slmult1 Multiple if else if statements affects the readability of code So if several options or conditions available its highly recommended to go for switch statement.\par
+
+\pard\sa200\sl276\slmult1 ------------------------------------------------------------------------------------------------\b Syntax:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 switch(x)\{\par
+case 1:\par
+\tab Exection1;\par
+\tab break;\par
+case 2:\par
+\tab Execution2;\par
+\tab break;\par
+.\par
+.\par
+.\par
+case n:\par
+\tab Execution n;\par
+\tab break;\par
+default:\par
+\tab default execution;\par
+
+\pard\sa200\sl276\slmult1\cf0 ------------------------------------------------------------------------------------------------\b Example 1:\b0\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 switch(x)\par
+\{\par
+case 1:\par
+\tab  System.out.println("jan");\par
+\tab break;\par
+case 2:\par
+\tab  System.out.println("feb");\par
+\tab break;\par
+.\par
+.\par
+.\par
+case 12:\par
+\tab  System.out.println("dec");\par
+\tab break;\par
+
+\pard\sa200\sl276\slmult1\cf0 ------------------------------------------------------------------------------------------------\par
+\cf1\b Whats the argument to the switch statement ?\par
+\cf0\b0\tab byte    \tab  Byte\par
+\tab short\tab\tab Short\par
+\tab char\tab\tab Character\par
+\tab int\tab\tab Integer\par
+\tab String\tab\tab Enum\par
+\cf1\b Wrapper class:\cf0\b0\par
+\tab Byte , Short , Integer , Characher ... Wrapper classes are required  in real time java programs like arraylist where we cannot use primitive datatypes\par
+\cf1\b Whats not allowed?\cf0\b0\par
+\tab boolean\par
+\tab long\par
+\tab float\par
+\tab double\par
+This leads to compile time error . \par
+------------------------------------------------------------------------------------------------ primitive datatypes like byte,shot,int and char alog with its wrapper classes like Integer, Short, Byte and Character , Enum , String are also allowed in switch \par
+------------------------------------------------------------------------------------------------\par
+
+\pard\li720\sa200\sl276\slmult1\cf1\b switch (x)\par
+\{\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b0 are the \{ \} mandatory ? yes curly braces are mandatory.  And curly braces are mandatory only in switch statement where as in if block or else block if there is only one execution statement then we dont need to put \{ \} . \par
+------------------------------------------------------------------------------------------------\par
+eg:\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 class Test\{\par
+public static void main(String[] args)\{\par
+int x =10;\par
+switch(x)\{\par
+\tab\}\par
+     \}\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0 -----------------------------------------------------------------\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 int x =10;\par
+int y =20;\par
+switch (x)\{\par
+case 1:\par
+\tab s.o.p();\par
+\tab break;\par
+case y :\par
+\tab s.o.p();\par
+\tab break;\par
+\}\par
+
+\pard\sa200\sl276\slmult1\b o/p:\cf0\b0\par
+
+\pard\li720\sa200\sl276\slmult1 Compile time error ! because case expression should be constant expression and not variables. we can use variables if variable is a final variable since its value cannot be changes , because the values in the cases will be analysed during compile time , so after compile time values shld not be changed . \par
+
+\pard\sa200\sl276\slmult1 eg:\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 int x =10;\par
+final int y =20;\par
+
+\pard\sa200\sl276\slmult1\cf0 -----------------------------------------------------------------------------\par
+
+\pard\li720\sa200\sl276\slmult1\cf1 int x =10;\par
+switch(x+1)\par
+\{\par
+case 10:\par
+\tab //\par
+\tab break;\par
+case 2+3+4;\par
+\tab //\par
+\tab break;\par
+\}\par
+
+\pard\sa200\sl276\slmult1\cf0\b Result:\b0\par
+
+\pard\li720\sa200\sl276\slmult1 its valid because the expression within switch (x+1) results in int which is an allowed argument and the case label 2+3+4 is constant , so expressions are allowed in both argument and case label but case label should be constant expression. \par
+
+\pard\sa200\sl276\slmult1 ---------------------------------\par
+byte b =10;\par
+switch(b)\par
+\{\par
+case 10;\par
+\tab //\par
+\tab break;\par
+case 100;\par
+\tab //\par
+\tab break;\par
+case 1000;\par
+\tab //\par
+\tab break;\par
+\}\par
+\par
+is this valid ? No its invalid .. y ? because byte range is between -128 to 127 here the case label exceeds it , so compile time error appears.\par
+byte b =10;\par
+switch(b+1)\par
+\{\par
+case 10;\par
+\tab //\par
+\tab break;\par
+case 100;\par
+\tab //\par
+\tab break;\par
+case 1000;\par
+\tab //\par
+\tab break;\par
+\}\par
+is this valid ? yes ! how  ? because In Java, when you do arithmetic with byte, short, or char, the result is always promoted to int.\par
+This is called integer promotion. It's a rule in the Java language.So even though b is a byte, b + 1 is an int.\par
+so the argument within switch is int  and the value of int exceeds the above given case label so its valid syntax.  Every case label should be in range of switch argument type.\par
+-----------------------------------------------------------------------------------------------\par
+int x =10;\par
+switch(x)\par
+\{\par
+case 97:\par
+\tab //\par
+case 98:\par
+\tab //\par
+case 99:\par
+\tab //\par
+case 'a':\par
+\tab // \par
+\}\par
+is this valid or invalid ? invalid because case label starts with 97 and last case is 'a' the ascii value of 'a' is 97 , so its duplicate value , we will get a compile time error called duplicate case values are not allowed \par
+case label:\par
+It should be constant expression\par
+value should be within the range of switch argument type\par
+duplicate case labels are not allowed\par
+---------------------------------------------------------------------------------------------------------------\par
+switch(x)\par
+\{\par
+case 0:\par
+\tab sop("0");\par
+case 1:\par
+\tab sop("1");\par
+\tab break;\par
+case 2:\par
+\tab sop("2");\par
+default :\par
+\tab sop("def");\par
+\}\par
+here which will be executed . in switch statement if the condidtion is success the below all statements will get executed automatically if u did not use break statement. \par
+-----------------------------------------------------------------------------------\par
+default:\par
+\tab 1. only one default case allowed within a switch statement\par
+\tab 2. default case can be written anywhere withing a switch statement but it will get executed only when none of the other cases matches\par
+-----------------------------------------------------------------------------------\par
+\cf1\b\f1\u9989?\f0  Important Points About switch in Java\cf0\b0\par
+\b Allowed data types:\b0\par
+
+\pard\li720\sa200\sl276\slmult1 1. You can use: byte, short, int, char, String, enum, and their wrapper    classes (from Java 7+).\par
+\lang16393 2. \f1\lang9\u10060?\f0  You cannot use: long, float, double, or boolean.\par
+
+\pard\sa200\sl276\slmult1\b Expression inside switch must return a value:\b0\par
+\tab The value must match a case label or go to default.\par
+\b case labels must be constant expressions:\b0\par
+\tab 1. Must be known at compile-time (e.g., literals or final constants).\par
+\tab 2. \f1\u10060?\f0  Variables or non-final values are not allowed.\par
+\b Each case must be unique:\b0\par
+\tab 1. Duplicate case values will cause a compile-time error.\par
+\b Use break to prevent fall-through:\b0\par
+\tab 1. If you don\rquote t use break, execution continues into the next case.\par
+\tab This is called fall-through.\par
+\b default is optional:\b0\par
+\tab 1. It's executed when no case matches.\par
+\tab 2. You can place it anywhere, but it\rquote s typically last.\par
+\b The switch expression is evaluated only once:\b0\par
+\tab 1. Then the program jumps directly to the matching case.\par
+\b Scope of case is limited:\b0\par
+\tab 1. Declare variables inside a case block with braces \{\} if needed.\par
+\b Switch statements are faster than multiple if-else (in some cases):\b0\par
+\tab 1. Especially when checking for many exact values.\par
+\par
+\par
+\par
+}
+ 
